@@ -6,9 +6,12 @@ let transportation = ["walk", "airplane", "bicycle", "car", "hitchhiking", "runn
 let activities = ["go for a walk", "visit a Museum", "go to a bar", "stay in and watch TV", "do a crossword puzzle"];
 
 
-let userTrip = [ destinations[Math.floor(Math.random() * destinations.length)], transportation[Math.floor(Math.random() * transportation.length)], restaurant[Math.floor(Math.random() * restaurant.length)], activities[Math.floor(Math.random() * activities.length)] ];
+let userTrip = [ getRandomElement(destinations), getRandomElement(transportation), getRandomElement(restaurant), getRandomElement(activities) ];
 
 console.log("Here is your trip: \nYou will go to: " + userTrip[0] + "\nYou you will travel by: " + userTrip[1] + "\nYou will eat at: " + userTrip[2] + "\nFor entertainment you will: " + userTrip[3])
+
+
+
 
 let userInput = "";
 
@@ -43,16 +46,16 @@ let userInput = "";
         }
 
         if(userInput === 1){
-            userTrip[0] = destinations[Math.floor(Math.random() * destinations.length)];
+            userTrip[0] = getRandomElement(destinations);
         }
         else if(userInput === 2){
-            userTrip[1] = transportation[Math.floor(Math.random() * transportation.length)];
+            userTrip[1] = getRandomElement(transportation);
         }
         else if(userInput === 3){
-            userTrip[2] = restaurant[Math.floor(Math.random() * restaurant.length)];
+            userTrip[2] = getRandomElement(restaurant);
         }
         else if(userInput === 4){
-            userTrip[3] = activities[Math.floor(Math.random() * activities.length)];
+            userTrip[3] = getRandomElement(activities);
         }
     }
     else{
@@ -69,3 +72,10 @@ let userInput = "";
 } 
 
 console.log("Here is your confirmed trip: \nYou will go to: " + userTrip[0] + "\nYou you will travel by: " + userTrip[1] + "\nYou will eat at: " + userTrip[2] + "\nFor entertainment you will: " + userTrip[3]);
+
+
+function getRandomElement(arrayToGrab){
+    let randomElement = arrayToGrab[Math.floor(Math.random() * arrayToGrab.length)];
+
+    return randomElement;
+}
