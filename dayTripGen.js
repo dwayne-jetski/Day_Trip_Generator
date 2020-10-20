@@ -6,4 +6,4 @@ let transportation = ["walk", "fly in an airplane", "ride a bicycle", "drive a c
 let activities = ["go for a walk", "visit a Museum", "go to a bar", "stay in and watch TV", "do a crossword puzzle"];
 
 
-let userTrip = [];
+let userTrip = [ destinations[Math.floor(Math.random() * destinations.length)], restaurant[Math.floor(Math.random() * restaurant.length)], transportation[Math.floor(Math.random() * transportation.length)], activities[Math.floor(Math.random() * activities.length)] ];
