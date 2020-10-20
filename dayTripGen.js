@@ -8,7 +8,7 @@ let activities = ["go for a walk", "visit a Museum", "go to a bar", "stay in and
 
 let userTrip = [ destinations[Math.floor(Math.random() * destinations.length)], transportation[Math.floor(Math.random() * transportation.length)], restaurant[Math.floor(Math.random() * restaurant.length)], activities[Math.floor(Math.random() * activities.length)] ];
 
-alert("Here is your trip: \nYou will go to: " + userTrip[0] + "\nYou you will travel by: " + userTrip[1] + "\nYou will eat at: " + userTrip[2] + "\nFor entertainment you will: " + userTrip[3])
+console.log("Here is your trip: \nYou will go to: " + userTrip[0] + "\nYou you will travel by: " + userTrip[1] + "\nYou will eat at: " + userTrip[2] + "\nFor entertainment you will: " + userTrip[3])
 
 let userInput = "";
 
@@ -29,8 +29,19 @@ let userInput = "";
     }
 
     if(userInput.charAt(0) === "y"){
+        
+        while (true){
         userInput = prompt("What would you like to change?: \n1) Destination \n2) Transportation \n3) Restaruant \n4) Entertainment")
-        userInput = parseInt(userInput);
+        
+        if(isNaN(userInput)){
+            
+        }
+        else{
+            userInput = parseInt(userInput);
+            break;
+        }
+        }
+
         if(userInput === 1){
             userTrip[0] = destinations[Math.floor(Math.random() * destinations.length)];
         }
@@ -53,4 +64,8 @@ let userInput = "";
             
         }
     }
+
+    console.log("Here is your trip: \nYou will go to: " + userTrip[0] + "\nYou you will travel by: " + userTrip[1] + "\nYou will eat at: " + userTrip[2] + "\nFor entertainment you will: " + userTrip[3]);
 } 
+
+console.log("Here is your confirmed trip: \nYou will go to: " + userTrip[0] + "\nYou you will travel by: " + userTrip[1] + "\nYou will eat at: " + userTrip[2] + "\nFor entertainment you will: " + userTrip[3]);
